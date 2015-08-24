@@ -3,14 +3,12 @@
 Plugin Name: XV Bookmarks
 Plugin URI: http://xavi.ivars.me/codi/xv-bookmarks/
 Description: Convert your bookmarks into a widget
-Version: 0.1
+Version: 0.2
 Author: Xavi Ivars xavi.ivars@gmail.com
 Author URI: http://xavi.ivars.me
 License: GPLv3
 GitHub Plugin URI: xavivars/xv-bookmarks
 */
-
-
 
 
 class XV_Bookmarks_Widget extends WP_Widget {
@@ -41,6 +39,10 @@ class XV_Bookmarks_Widget extends WP_Widget {
     }
 }
 
-register_widget('XV_Bookmarks_Widget');
+function register_xv_bookmarks_widget() {
+    register_widget ('XV_Bookmarks_Widget');
+}
 
-?>
+add_action ('widgets_init', 'register_xv_bookmarks_widget');
+
+
